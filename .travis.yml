@@ -2,6 +2,8 @@ dist: focal
 sudo: required
 language:
   - cpp
+cache:
+  - ccache
 compiler:
   - gcc
 addons:
