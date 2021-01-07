@@ -21,7 +21,7 @@ script:
   #- export CXX=/usr/bin/g++-6
   # Check versions of gcc, g++ and cmake
   - cmake --version
-  - git clone git@github.com:live-clones/gmsh.git gmsh
+  - git clone git@github.com:atismer/gmsh.git gmsh
   - pwd
   - cd gmsh
   - make
