@@ -24,12 +24,13 @@ script:
   # Check versions of gcc, g++ and cmake
   #- cmake --version
   #- git clone https://github.com/atismer/gmsh.git gmsh
-  #- pwd
+  - pwd
   #- cd gmsh
   #- mkdir build
   #- cd build
   #- cmake -DCMAKE_INSTALL_PREFIX=~/ext_lib -DENABLE_BUILD_SHARED=ON -DENABLE_PRIVATE_API=ON ..
   #- make
   # Run your build commands next
-  #- echo "Builing ..."
+  - echo "Execute buildDep..."
+  - cd dtOO
   - sh buildDep -i ~/ext_lib -n 1 -o all
