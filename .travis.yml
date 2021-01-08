@@ -32,5 +32,5 @@ script:
   #- make
   # Run your build commands next
   - echo "Execute buildDep..."
-  - cd sandbox
+  #- cd sandbox
   - sh buildDep -i ~/ext_lib -n 1 -o all
