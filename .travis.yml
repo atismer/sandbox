@@ -17,15 +17,17 @@ addons:
 jobs:
   include:
     - stage: build_0
-      script: bash buildDep -i ~/ext_lib -n 1 -o openmesh
+      script: bash buildDep -i ~/ext_lib -n 2 -o openmesh
     - #
-      script: bash buildDep -i ~/ext_lib -n 1 -o openvolumemesh
+      script: bash buildDep -i ~/ext_lib -n 2 -o openvolumemesh
     - #
-      script: bash buildDep -i ~/ext_lib -n 1 -o gmsh
+      script: bash buildDep -i ~/ext_lib -n 2 -o gmsh
     - #
-      script: bash buildDep -i ~/ext_lib -n 1 -o cgm
+      script: bash buildDep -i ~/ext_lib -n 2 -o cgm
     - stage: build_1
-      script: bash buildDep -i ~/ext_lib -n 1 -o moab
+      script: bash buildDep -i ~/ext_lib -n 2 -o moab
+    - stage: "lsExtLib"
+      script: ls ~/ext_lib
   #- pwd
   #- cat /proc/cpuinfo
   #- cd gmsh
