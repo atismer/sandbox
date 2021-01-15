@@ -34,6 +34,6 @@ script:
   # Run your build commands next
   - echo "Execute buildDep..."
   #- cd sandbox
-  - bash buildDep -i ~/ext_lib -n 1 -o all
+  - bash buildDep -i ~/ext_lib -n 2 -o all
   #- chmod u+x buildDep
   #- ./buildDep -i ~/ext_lib -n 1 -o all
