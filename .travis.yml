@@ -28,7 +28,7 @@ addons:
       #- gcc-6
       #- g++-6
       - cmake
-      - awscli
+#      - awscli
       
 before_install:
   - echo "Before install"
@@ -39,30 +39,6 @@ jobs:
   include:
     - stage: build_0
       script: 
-        - bash buildDep -i ~/ext_lib -n 2 -o openmesh
-        - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
-    - stage: build_0
-      script:
-        - bash buildDep -i ~/ext_lib -n 2 -o openvolumemesh
-        - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
-    - stage: build_0
-      script: 
-        - bash buildDep -i ~/ext_lib -n 2 -o gmsh
-        - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
-    - stage: build_0
-      script: 
-        - bash buildDep -i ~/ext_lib -n 2 -o cgm
-        - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
-    - stage: build_1
-      script:
-        - aws s3 sync s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER ~/$TRAVIS_BUILD_NUMBER
-        - bash buildDep -i ~/ext_lib -n 2 -o moab
-        - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
-    - stage: "lsTRAVIS_BUILD_NUMBER"
-      script:
-        - aws s3 sync s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER ~/$TRAVIS_BUILD_NUMBER
-        - ls ~/$TRAVIS_BUILD_NUMBER
-  #- pwd
   #- cat /proc/cpuinfo
   #- cd gmsh
   #- mkdir build
@@ -70,8 +46,8 @@ jobs:
   #- cmake -DCMAKE_INSTALL_PREFIX=~/ext_lib -DENABLE_BUILD_SHARED=ON -DENABLE_PRIVATE_API=ON ..
   #- make
   # Run your build commands next
-  #- echo "Execute buildDep..."
+        - echo "Execute buildDep..."
   #- cd sandbox
-  #- bash buildDep -i ~/ext_lib -n 2 -o all
+        - bash buildDep -i ~/ext_lib -n 2 -o all
   #- chmod u+x buildDep
   #- ./buildDep -i ~/ext_lib -n 1 -o all
