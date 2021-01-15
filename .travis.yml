@@ -17,9 +17,12 @@ addons:
 jobs:
   include:
     - stage build_0:
-      script: bash buildDep -i ~/ext_lib -n 1 -o openmesh 
+      script: bash buildDep -i ~/ext_lib -n 1 -o openmesh
+    - #
       script: bash buildDep -i ~/ext_lib -n 1 -o openvolumemesh
+    - #
       script: bash buildDep -i ~/ext_lib -n 1 -o gmsh
+    - #
       script: bash buildDep -i ~/ext_lib -n 1 -o cgm
     - stag build_1:
       script: bash buildDep -i ~/ext_lib -n 1 -o moab
