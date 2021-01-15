@@ -45,6 +45,7 @@ jobs:
         - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
     - stage: "lsTRAVIS_BUILD_NUMBER"
       script:
+        - aws s3 sync s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER ~/$TRAVIS_BUILD_NUMBER
         - ls ~/$TRAVIS_BUILD_NUMBER
   #- pwd
   #- cat /proc/cpuinfo
