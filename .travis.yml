@@ -1,18 +1,5 @@
 dist: focal
-
-#env:
-#  global:
-#    # include $HOME/.local/bin for `aws`
-#    - PATH=$HOME/.local/bin:$PATH
-
-#before_install:
-#  #- pyenv global 3.7.1
-#  #- pip install -U pip
-#  #- pip install awscli
-#  - apt install awscli
-#  - mkdir -p ~/$TRAVIS_BUILD_NUMBER
-#  - aws s3 sync s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER ~/$TRAVIS_BUILD_NUMBER
-  
+ 
 sudo: required
 language:
   - cpp
@@ -22,32 +9,12 @@ compiler:
   - gcc
 addons:
   apt:
-    #sources:
-      #- ubuntu-toolchain-r-test
     packages:
-      #- gcc-6
-      #- g++-6
       - cmake
-#      - awscli
       
-before_install:
-  - echo "Before install"
-  - mkdir -p ~/$TRAVIS_BUILD_NUMBER
-  - aws s3 sync s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER ~/$TRAVIS_BUILD_NUMBER
-  
 jobs:
   include:
     - stage: build_0
       script: 
-  #- cat /proc/cpuinfo
-  #- cd gmsh
-  #- mkdir build
-  #- cd build
-  #- cmake -DCMAKE_INSTALL_PREFIX=~/ext_lib -DENABLE_BUILD_SHARED=ON -DENABLE_PRIVATE_API=ON ..
-  #- make
-  # Run your build commands next
         - echo "Execute buildDep..."
-  #- cd sandbox
         - bash buildDep -i ~/ext_lib -n 2 -o all
-  #- chmod u+x buildDep
-  #- ./buildDep -i ~/ext_lib -n 1 -o all
