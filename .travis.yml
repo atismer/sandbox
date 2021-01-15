@@ -25,6 +25,7 @@ script:
   #- cmake --version
   #- git clone https://github.com/atismer/gmsh.git gmsh
   - pwd
+  - cat /proc/cpuinfo
   #- cd gmsh
   #- mkdir build
   #- cd build
@@ -34,5 +35,5 @@ script:
   - echo "Execute buildDep..."
   #- cd sandbox
   - bash buildDep -i ~/ext_lib -n 1 -o all
-  - chmod u+x buildDep
-  - ./buildDep -i ~/ext_lib -n 1 -o all
+  #- chmod u+x buildDep
+  #- ./buildDep -i ~/ext_lib -n 1 -o all
