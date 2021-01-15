@@ -14,26 +14,25 @@ addons:
       #- gcc-6
       #- g++-6
       - cmake
-script:
-  # Link gcc-6 and g++-6 to their standard commands
-  #- ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
-  #- ln -s /usr/bin/g++-6 /usr/local/bin/g++
-  # Export CC and CXX to tell cmake which compiler to use
-  #- export CC=/usr/bin/gcc-6
-  #- export CXX=/usr/bin/g++-6
-  # Check versions of gcc, g++ and cmake
-  #- cmake --version
-  #- git clone https://github.com/atismer/gmsh.git gmsh
-  - pwd
-  - cat /proc/cpuinfo
+jobs:
+  include:
+    - stage build_0:
+      script: bash buildDep -i ~/ext_lib -n 1 -o openmesh 
+      script: bash buildDep -i ~/ext_lib -n 1 -o openvolumemesh
+      script: bash buildDep -i ~/ext_lib -n 1 -o gmsh
+      script: bash buildDep -i ~/ext_lib -n 1 -o cgm
+    - stag build_1:
+      script: bash buildDep -i ~/ext_lib -n 1 -o moab
+  #- pwd
+  #- cat /proc/cpuinfo
   #- cd gmsh
   #- mkdir build
   #- cd build
   #- cmake -DCMAKE_INSTALL_PREFIX=~/ext_lib -DENABLE_BUILD_SHARED=ON -DENABLE_PRIVATE_API=ON ..
   #- make
   # Run your build commands next
-  - echo "Execute buildDep..."
+  #- echo "Execute buildDep..."
   #- cd sandbox
-  - bash buildDep -i ~/ext_lib -n 2 -o all
+  #- bash buildDep -i ~/ext_lib -n 2 -o all
   #- chmod u+x buildDep
   #- ./buildDep -i ~/ext_lib -n 1 -o all
