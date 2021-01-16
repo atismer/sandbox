@@ -11,10 +11,14 @@ addons:
   apt:
     packages:
       - cmake
-      
+      - libcr-dev
+      - mpich2
+      - mpich2-doc
+
 jobs:
   include:
     - stage: build_0
       script: 
         - echo "Execute buildDep..."
-        - bash buildDep -i ~/ext_lib -n 2 -o all
+        #- bash buildDep -i ~/ext_lib -n 2 -o all
+        - bash buildDep -i ~/ext_lib -n 2 -o cgm
