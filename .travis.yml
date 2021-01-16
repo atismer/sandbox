@@ -12,7 +12,7 @@ addons:
     packages:
       - cmake
       - libcr-dev
-      - mpich2
+      - mpich
 
 jobs:
   include:
