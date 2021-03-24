@@ -201,7 +201,7 @@ if [[ "$_dep" == "moab" || "$_dep" == "all" ]]; then
       -DCMAKE_INSTALL_PREFIX=${_installPrefix} \
       -DENABLE_CGM=OFF \
       -DENABLE_CGNS=ON \
-      -DCMAKE_SHARED_LINKER_FLAGS="-lcgns -lhdf5" \
+      -DCMAKE_SHARED_LINKER_FLAGS="-lcgns -lhdf5-100" \
       ../moab
     make -j${_nProcs} install
   fi
