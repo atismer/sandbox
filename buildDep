@@ -203,6 +203,7 @@ if [[ "$_dep" == "moab" || "$_dep" == "all" ]]; then
       -DENABLE_CGNS=ON \
       -DCMAKE_SHARED_LINKER_FLAGS=-lcgns \
       -DENABLE_HDF5=ON \
+      -DCMAKE_CXX_FLAGS=-I/usr/include/hdf5/serial \
       ../moab
     make -j${_nProcs} install
   fi
