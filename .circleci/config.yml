@@ -17,4 +17,4 @@ jobs:
       #    command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
           name: Creating Build Files
-          command: 'bash buildDep -i ~/ext_lib -n 4 -o moab'
+          command: 'bash buildDep -i ~/ext_lib -n 4 -o all'
