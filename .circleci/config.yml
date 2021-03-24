@@ -17,4 +17,4 @@ jobs:
       #    command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
           name: Creating Build Files
-          command: 'bash buildDep -i ~/ext_lib -n 2 -o cgm'
+          command: 'bash buildDep -i ~/ext_lib -n 1 -o all'
